@@ -39,8 +39,8 @@ gem 'annotate', '~> 2.7', '>= 2.7.1'
 gem 'simple_form', '~> 3.4'
 gem 'bootstrap-wysihtml5-rails', '~> 0.3.3.8'
 gem 'date_validator', '~> 0.9.0'
-gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: 'master', submodules: true
-gem 'momentjs-rails', '~> 2.17', '>= 2.17.1'
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.17.43'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
