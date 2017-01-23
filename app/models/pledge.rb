@@ -1,4 +1,7 @@
 class Pledge < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :uuid
+  
   belongs_to :user
   belongs_to :reward
 

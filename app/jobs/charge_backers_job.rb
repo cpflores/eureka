@@ -9,5 +9,6 @@ class ChargeBackersJob < ActiveJob::Base
       end
     else
       @project.expired!
+    end
   end
 end
