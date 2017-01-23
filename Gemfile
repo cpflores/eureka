@@ -43,6 +43,8 @@ gem 'momentjs-rails', '>= 2.9.0'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.17.43'
 gem 'dotenv-rails', '~> 2.1', '>= 2.1.2'
 gem 'braintree', '~> 2.72'
+gem 'delayed_job_active_record', '~> 4.1', '>= 4.1.1'
+gem 'delayed_job_web', '~> 1.2', '>= 1.2.10'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
