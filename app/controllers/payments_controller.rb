@@ -30,7 +30,7 @@ class PaymentsController < ApplicationController
       if @pledge.valid?
         if current_user.customer_id && Braintree::Customer.find(current_user.customer_id)
           @pledge.save
-          format.html { redirect_to project_path(@project), notice: "Your pledge was created" }
+          format.html { redirect_to project_path(@project), notice: "Your pledge was created." }
         else
           result = Braintree::Customer.create(
             :email => current_user.email,
@@ -38,13 +38,14 @@ class PaymentsController < ApplicationController
           )
           if result.success?
             @pledge.save
-            current_user.update(customer_id: result.customer_id)
-            format.html {redirect_to project_path(@project), notice: "Your pledge was created" }
+            current_user.update(customer_id: result.customer.id)
+            format.html { redirect_to project_path(@project), notice: "Your pledge was created." }
           else
             format.html { render :new }
           end
         end
       else
+        flash.now[:error] = "Pledge is invalid"
         format.html { render :new }
       end
     end
@@ -57,7 +58,7 @@ class PaymentsController < ApplicationController
   end
 
   def set_amount
-    @amount = payment_params[:amount].to.i
+    @amount = payment_params[:amount].to_i
   end
 
   def set_reward
