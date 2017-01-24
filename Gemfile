@@ -46,6 +46,7 @@ gem 'braintree', '~> 2.72'
 gem 'delayed_job_active_record', '~> 4.1', '>= 4.1.1'
 gem 'delayed_job_web', '~> 1.2', '>= 1.2.10'
 gem 'friendly_id', '~> 5.2'
+gem 'cancan', '~> 1.6', '>= 1.6.10'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
