@@ -16,13 +16,13 @@
             <%= link_to 'Delete', project_path(@project), method: :delete, data: { confirm: "Are you sure?" } %>
           </div>
         <% end %>
-        <%= render 'stats' %>
+        <%= render 'stats', project: @project, days_to_to: @days_to_to %>
         <% if can? :manage, @project %>
           <%= link_to 'See project backers', project_pledges_path(@project), class: "btn btn-success btn-lg" %>
         <% else %>
           <%= link_to 'Back this project', new_project_pledge_path(@project), class: "btn btn-success btn-lg" %>
         <% end %>
-        <p class="project-time">This project will expire in 3 days.</p>
+        <p class="project-time"><%= funding_status_message @project %></p>
       </div>
     </div>
     <div class='row'>
